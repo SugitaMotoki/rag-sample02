@@ -1,0 +1,15 @@
+description: "ベクトル化手法比較"
+
+prompts:
+  - "{name}は何歳ですか"
+  - "{name}の学校はどこですか"
+
+providers:
+  - "python:faiss_provider.py"
+  - "python:tfidf_provider.py"
+
+tests:
+  - vars:
+      name: 田中太郎
+  - vars:
+      name: 鈴木花子
