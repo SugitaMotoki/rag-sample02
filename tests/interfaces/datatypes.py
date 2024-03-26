@@ -7,7 +7,7 @@ class ProviderOptions(TypedDict):
 
 
 class CallApiContextParams(TypedDict):
-    vars: dict[str, str]
+    vars: dict[str, Any]
 
 
 class TokenUsage(TypedDict):

@@ -9,7 +9,7 @@ def get_documents(
     chunk_overlap=10,
 ):
     csv_path = join(dirname(__file__), "..", "data", "wiki", "wiki.csv")
-    loader = CSVLoader(file_path=csv_path)
+    loader = CSVLoader(file_path=csv_path, metadata_columns=["id"])
     docs = loader.load()
     text_splitter = RecursiveCharacterTextSplitter(
         separators="\n\n",

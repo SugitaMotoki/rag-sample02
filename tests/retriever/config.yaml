@@ -1,8 +1,7 @@
 description: "ベクトル化手法比較"
 
 prompts:
-  - "{name}は何歳ですか"
-  - "{name}の学校はどこですか"
+  - "インドネシアの{{ topic }}について教えてください"
 
 providers:
   - "python:faiss_provider.py"
@@ -10,6 +9,11 @@ providers:
 
 tests:
   - vars:
-      name: 田中太郎
+      topic: 主な島
+      required_document_ids: [23, 60]
+      allow_excess: true
+    assert:
+      - type: python
+        value: file://tests/retriever/assertions/contain_document.py
   - vars:
-      name: 鈴木花子
+      topic: 気候
